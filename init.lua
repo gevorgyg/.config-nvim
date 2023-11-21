@@ -95,6 +95,7 @@ require('lazy').setup({
     },
   },
   {
+    -- Allows for jumping between marked files
     "ThePrimeagen/harpoon",
   },
 
