@@ -94,6 +94,9 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
+  {
+    "ThePrimeagen/harpoon",
+  },
 
   {
     -- Autocompletion
