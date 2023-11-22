@@ -169,16 +169,6 @@ require('lazy').setup({
       },
     },
   },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-  },
-  {
-    'projekt0n/github-nvim-theme',
-    lazy = false,
-    priority = 1000
-  },
   --
   {
     -- Add indentation guides even on blank lines
@@ -234,7 +224,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'gevorgyg.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -518,9 +508,16 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
+  clangd = {
+    keys = {
+      { "<leader>sH", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch [s]ource/[H]eader (C/C++)" },
+    },
+    capabilities = {
+      offsetEncoding = { "utf-16" },
+    },
+  },
+  gopls = {},
+  pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
