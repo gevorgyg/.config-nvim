@@ -477,6 +477,8 @@ local on_attach = function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
 
+  nmap('<leader>fb', vim.lsp.buf.format, '[F]ormat [B]uffer')
+
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
@@ -597,5 +599,11 @@ cmp.setup {
   },
 }
 
+vim.keymap.set('n', '<C-t>t', ":$tabnew<CR>")
+vim.keymap.set('n', '<C-t>w', ":tabclose<CR>")
+vim.keymap.set('n', '<C-{>', ":tabp<CR>")
+vim.keymap.set('n', '<C-}>', ":tabn<CR>")
+vim.keymap.set('n', '<C-t>[', ":-tabmove<CR>")
+vim.keymap.set('n', '<C-t>]', ":+tabmove<CR>")
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
