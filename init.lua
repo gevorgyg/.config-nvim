@@ -375,7 +375,7 @@ vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
-      'bash', 'norg_meta' },
+      'bash', 'norg_meta', 'zig'},
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -511,9 +511,6 @@ local servers = {
   },
   gopls = {},
   pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
     Lua = {
@@ -521,6 +518,7 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  zls = {}
 }
 
 -- Setup neovim lua configuration
