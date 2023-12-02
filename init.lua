@@ -211,6 +211,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  {"tpope/vim-obsession"},
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -597,6 +598,7 @@ cmp.setup {
   },
 }
 
+-- tabs
 vim.keymap.set('n', '<C-t>t', ":$tabnew<CR>")
 vim.keymap.set('n', '<C-t>w', ":tabclose<CR>")
 vim.keymap.set('n', '<C-{>', ":tabp<CR>")
