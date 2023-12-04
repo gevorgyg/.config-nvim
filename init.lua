@@ -211,7 +211,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-  {"tpope/vim-obsession"},
+  { "tpope/vim-obsession" },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -376,7 +376,7 @@ vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
-      'bash', 'norg_meta', 'zig'},
+      'bash', 'norg_meta', 'zig' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -605,5 +605,9 @@ vim.keymap.set('n', '<C-{>', ":tabp<CR>")
 vim.keymap.set('n', '<C-}>', ":tabn<CR>")
 vim.keymap.set('n', '<C-t>[', ":-tabmove<CR>")
 vim.keymap.set('n', '<C-t>]', ":+tabmove<CR>")
+
+-- open nvim config
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pc', "<cmd>e ~/.config/nvim<CR>")
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
