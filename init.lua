@@ -618,5 +618,9 @@ vim.keymap.set('n', '<C-t>]', ":+tabmove<CR>")
 -- open nvim config
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>pc', "<cmd>e ~/.config/nvim<CR>")
+
+-- set working directory to netrw directory
+vim.g.netrw_keepdir = 0
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
