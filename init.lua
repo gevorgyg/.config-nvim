@@ -211,7 +211,13 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-  { "tpope/vim-obsession" },
+{
+  "folke/persistence.nvim",
+  event = "BufReadPre", -- this will only start session saving when an actual file was opened
+  opts = {
+    -- add any custom options here
+  }
+},
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -515,6 +521,9 @@ local servers = {
 
   lua_ls = {
     Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      },
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
